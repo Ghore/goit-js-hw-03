@@ -9,11 +9,12 @@ const products = [
 const getAllPropValues = function(arr, prop) {
   let propValues = [];
   for (const obj of arr) {
-    propValues.push(obj[prop]);
+    if (obj[prop]) {
+      propValues.push(obj[prop]);
+    }
   }
   return propValues;
 };
-
 console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
 console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
